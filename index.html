@@ -42,7 +42,7 @@ body {
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 8%;
     background: rgba(10,10,14,0.85);
     backdrop-filter: blur(16px);
     border-bottom: 0.5px solid var(--border);
@@ -71,7 +71,7 @@ body {
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 3rem 4rem;
+    padding: 6rem 8% 4rem;
     position: relative;
     overflow: hidden;
   }
@@ -195,9 +195,12 @@ body {
   @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
   /* SECTION SHARED */
-  section {
-    padding: 5rem 3rem;
+section {
+    padding: 5rem 8%;
     border-top: 0.5px solid var(--border);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
   }
   .section-label {
     font-family: 'DM Mono', monospace;
@@ -228,7 +231,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
-    max-width: 900px;
+    max-width: 100%;
   }
   .about-text p {
     color: var(--muted);
@@ -275,7 +278,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.2rem;
-    max-width: 900px;
+    max-width: 100%;
   }
   .comp-card {
     background: var(--surface);
@@ -319,11 +322,11 @@ body {
   }
 
   /* PROJECTS */
-  .projects-grid {
+ .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.2rem;
-    max-width: 900px;
+    max-width: 100%;
   }
   .proj-card {
     background: var(--surface);
@@ -378,7 +381,7 @@ body {
   }
 
   /* SKILLS */
-  .skills-section { max-width: 900px; }
+  .skills-section { max-width: 100%; }
   .skills-category { margin-bottom: 2.5rem; }
   .skills-cat-label {
     font-family: 'DM Mono', monospace;
