@@ -470,14 +470,17 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" style="flex-direction: row; align-items: center; gap: 2rem;">
   <div class="hero-grid"></div>
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
 
-  <div class="hero-tag">Chips. Circuits. Satellites. All from scratch.</div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+  <div class="hero-tag">
 
-  <h1>Mitisha<br/><em>Ghelani</em></h1>
+  <div class="hero-tag" style="--pseudo-display: none;">Chips. Circuits. Satellites. All from scratch.</div>
+
+  <h1 style="color: #ffffff; font-weight: 600;">Mitisha<br/><span style="color: #ffffff; font-style: italic;">Ghelani</span></h1>
 
   <p class="hero-subtitle">
     Building circuits that power motion.<br/>
@@ -498,6 +501,14 @@
     <a class="btn btn-primary" href="#projects">View Work</a>
     <!-- ✏️ EDIT: Replace the email below with your real email address -->
     <a class="btn btn-outline" href="#contact">Get in Touch</a>
+ </div>
+  </div>
+
+  <div style="flex: 0 0 320px; display: flex; align-items: center; justify-content: center; z-index: 1;">
+    <img src="photo.jpg" alt="Mitisha Ghelani"
+    style="width: 280px; height: 340px; object-fit: cover;
+    border-radius: 12px; border: 1px solid rgba(168,180,255,0.25);
+    box-shadow: 0 0 60px rgba(168,180,255,0.08);">
   </div>
 
   <div class="scroll-hint">
@@ -511,10 +522,6 @@
   <div class="section-label">01 — About</div>
   <div class="about-grid">
     <div class="about-text">
-  <img src="photo.jpg" alt="Mitisha Ghelani"
-  style="width: 140px; height: 200px; border-radius: 50%;
-  object-fit: cover; border: 1px solid rgba(168,180,255,0.3);
-  margin-bottom: 1.5rem; display: block;">
      
       <h2>Engineer. Builder.<br/><em>Orbit Chaser.</em></h2>
       <!-- ✏️ EDIT: Update these paragraphs with your own bio if needed -->
