@@ -636,6 +636,34 @@ section {
     border-top: 0.5px solid var(--border);
     margin-top: auto;
   }
+ /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 </style>
 </head>
 <body>
@@ -996,6 +1024,34 @@ section {
   <p>© 2026 Mitisha Ghelani · PDEU, Gandhinagar</p>
   <p>ECE · Satellites · EVs · Silicon</p>
 </footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, entry.target.dataset.delay || 0);
+      }
+    });
+  }, { threshold: 0.1 });
 
+  document.querySelectorAll('.stat-card, .comp-card, .proj-card, .cert-card, .skill-chip, .skills-category, .about-text, .about-stats, .contact-inner, .section-label, h2').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.dataset.delay = (i % 4) * 100;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.about-text').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-left');
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.about-stats').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-right');
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
