@@ -1792,6 +1792,204 @@ section {
     font-size: 1.3rem !important;
     font-weight: 600 !important;
   }
+ /* CERTIFICATIONS REDESIGN */
+  .cert-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  .cert-featured-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .cert-hero-card {
+    border-radius: 16px;
+    border: 0.5px solid rgba(168,180,255,0.2);
+    overflow: hidden;
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+  .cert-hero-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168,180,255,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(168,180,255,0.1);
+  }
+  .cert-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .cert-bg-orange {
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(255,140,0,0.25), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(255,80,0,0.15), transparent 60%),
+      linear-gradient(135deg, #0f0a05, #1a1005, #0a0a0e);
+  }
+  .cert-bg-purple {
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(120,80,255,0.25), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(168,180,255,0.15), transparent 60%),
+      linear-gradient(135deg, #0a0510, #100a1a, #0a0a0e);
+  }
+  .cert-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.8rem;
+    background: linear-gradient(0deg, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.6) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cert-hero-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .cert-hero-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    filter: drop-shadow(0 0 10px rgba(255,200,0,0.4));
+  }
+  .cert-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  .cert-hero-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .cert-hero-highlight {
+    font-size: 0.85rem;
+    color: #d8d8e8;
+    margin-top: 0.3rem;
+  }
+  .cert-hero-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .cert-hero-badge {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    border: 0.5px solid rgba(255,180,0,0.4);
+    background: rgba(255,180,0,0.1);
+    color: #ffd080;
+  }
+  .cert-grid-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .cert-mini-card {
+    background: rgba(20,20,35,0.7);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
+  .cert-mini-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: radial-gradient(ellipse at top right, rgba(57,255,120,0.04), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .cert-mini-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(57,255,120,0.4);
+    box-shadow: 0 0 25px rgba(57,255,120,0.12), 0 10px 40px rgba(0,0,0,0.3);
+  }
+  .cert-mini-card:hover::before { opacity: 1; }
+  .cert-mini-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 0.5px solid;
+  }
+  .cert-mini-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .cert-mini-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cert-mini-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cert-mini-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+  .cert-mini-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .cert-mini-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    padding-top: 0.5rem;
+    border-top: 0.5px solid var(--border);
+    margin-top: auto;
+  }
+  @media (max-width: 700px) {
+    .cert-featured-row { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -2034,55 +2232,102 @@ section {
 <!-- SKILLS -->
  <!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="section-label">05 — Certifications & Recognition</div>
-  <h2>Achievements & Certifications</h2>
-  <br/>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; max-width: 100%;">
-    <!-- Certificate 1 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(255,140,0,0.1); color: #ffaa40;">🏆 Award</div>
-      <div class="cert-title"><strong>Shell Eco-Marathon</strong></div>
-      <div class="cert-body">Recognised for exceptional work in vehicle design, fabrication, and testing — achieving <span class="cert-highlight">226.76 km/kWh</span> energy efficiency and <span class="cert-highlight">5th place</span> in the Prototype Battery-Electric category, Asia-Pacific & Middle East 2025.</div>
-      <div class="cert-footer">Shell Eco-Marathon · February 12, 2025</div>
+  <div class="section-label">07 — Certifications & Recognition</div>
+  <h2><strong>Achievements & Certifications</strong></h2>
+  <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 4rem; max-width: 600px;">
+    Every certificate a proof of commitment. Every recognition a validation of excellence.
+  </p>
+
+  <div class="cert-showcase">
+
+    <!-- TOP ROW — FEATURED 2 -->
+    <div class="cert-featured-row">
+
+      <div class="cert-hero-card">
+        <div class="cert-hero-bg cert-bg-orange"></div>
+        <div class="cert-hero-content">
+          <div class="cert-hero-org">Shell Eco-Marathon</div>
+          <div class="cert-hero-icon">🏆</div>
+          <div class="cert-hero-title">Certificate of Results</div>
+          <div class="cert-hero-subtitle">Asia-Pacific & Middle East 2025</div>
+          <div class="cert-hero-highlight">226.76 km/kWh · 5th Place · Prototype Battery-Electric</div>
+          <div class="cert-hero-meta">
+            <span>Mitisha Ghelani</span>
+            <span>·</span>
+            <span>Team Kaizen India · PDEU</span>
+            <span>·</span>
+            <span>Feb 12, 2025</span>
+          </div>
+          <div class="cert-hero-badge">🥇 1st in India</div>
+        </div>
+      </div>
+
+      <div class="cert-hero-card">
+        <div class="cert-hero-bg cert-bg-purple"></div>
+        <div class="cert-hero-content">
+          <div class="cert-hero-org">PDEU × Synopsys × VLSI Expert</div>
+          <div class="cert-hero-icon">🔬</div>
+          <div class="cert-hero-title">Certificate of Completion</div>
+          <div class="cert-hero-subtitle">RTL to GDSII · Synopsys EDA Tools</div>
+          <div class="cert-hero-highlight">5-Day Workshop · Full ASIC Design Flow Closure</div>
+          <div class="cert-hero-meta">
+            <span>Ghelani Mitisha</span>
+            <span>·</span>
+            <span>26–30 May 2025</span>
+          </div>
+          <div class="cert-hero-badge" style="background: rgba(168,180,255,0.15); border-color: rgba(168,180,255,0.4); color: var(--accent);">✓ Full Closure</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Certificate 2 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(168,180,255,0.1); color: var(--accent);">🎓 Completion</div>
-      <div class="cert-title"><strong>RTL to GDSII · Synopsys EDA Tools</strong></div>
-      <div class="cert-body">Successfully completed the <span class="cert-highlight">5-Day Workshop on RTL to GDSII</span> using Synopsys EDA Tools, jointly certified by PDEU, Synopsys Academic & Research Alliances, and VLSI Expert.</div>
-      <div class="cert-footer">PDEU × Synopsys · 26–30 May 2025</div>
-    </div>
+    <!-- BOTTOM ROW — 4 CARDS -->
+    <div class="cert-grid-row">
 
-    <!-- Certificate 3 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(110,231,199,0.1); color: var(--accent2);">📜 Participation</div>
-      <div class="cert-title"><strong>Advanced Semiconductor Device Design · ChipIN</strong></div>
-      <div class="cert-body">Participated in a <span class="cert-highlight">3-Day Skill Development Program</span> on Advanced Semiconductor Device Design, Simulation and Circuit Implementation — organised by ICT/ECE, SoT, PDEU under MeitY's ChipIN initiative.</div>
-      <div class="cert-footer">PDEU · March 21–22 & 28, 2025</div>
-    </div>
-    <!-- Certificate 4 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(168,180,255,0.1); color: var(--accent);">📜 Participation</div>
-      <div class="cert-title"><strong>VLSI Connect · Bridging Academia & Industry</strong></div>
-      <div class="cert-body">Participated in the one-day event <span class="cert-highlight">"VLSI CONNECT — Bridging the Gap Between Academia and Industry"</span> organised at Pandit Deendayal Energy University, Gandhinagar.</div>
-      <div class="cert-footer">PDEU · October 11, 2024</div>
-    </div>
+      <div class="cert-mini-card">
+        <div class="cert-mini-top" style="border-color: rgba(110,231,199,0.3);">
+          <div class="cert-mini-icon" style="background: rgba(110,231,199,0.1); color: var(--accent2);">📜</div>
+          <div class="cert-mini-type" style="color: var(--accent2);">Participation</div>
+        </div>
+        <div class="cert-mini-org">ChipIN · MeitY · PDEU</div>
+        <div class="cert-mini-title">Advanced Semiconductor Device Design</div>
+        <div class="cert-mini-desc">3-Day Skill Development Program on Semiconductor Design, Simulation & Circuit Implementation</div>
+        <div class="cert-mini-date">March 21–22 & 28, 2025</div>
+      </div>
 
-    <!-- Recognition 1 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(240,194,122,0.1); color: var(--accent3);">⭐ Recognition</div>
-      <div class="cert-title"><strong>Indian Embassy Qatar · ICC Star Recognition</strong></div>
-      <div class="cert-body">Received a prestigious <span class="cert-highlight">Star Recognition from the Indian Cultural Centre (ICC)</span> under the aegis of the Indian Embassy, Qatar — honouring Team Kaizen for representing India at Shell Eco-Marathon on the global stage.</div>
-      <div class="cert-footer">Indian Embassy · Qatar · 2025</div>
-    </div>
+      <div class="cert-mini-card">
+        <div class="cert-mini-top" style="border-color: rgba(168,180,255,0.3);">
+          <div class="cert-mini-icon" style="background: rgba(168,180,255,0.1); color: var(--accent);">📜</div>
+          <div class="cert-mini-type" style="color: var(--accent);">Participation</div>
+        </div>
+        <div class="cert-mini-org">PDEU · SoT · ECE & ICT</div>
+        <div class="cert-mini-title">VLSI Connect · Academia & Industry</div>
+        <div class="cert-mini-desc">One-day event bridging the gap between Academia and Industry in VLSI domain</div>
+        <div class="cert-mini-date">October 11, 2024</div>
+      </div>
 
-    <!-- Recognition 2 -->
-    <div class="cert-card">
-      <div class="cert-badge" style="background: rgba(110,231,199,0.1); color: var(--accent2);">📰 Featured</div>
-      <div class="cert-title"><strong>Sancharni Magazine · PDEU ICT & ECE</strong></div>
-      <div class="cert-body">Featured and recognised in <span class="cert-highlight">Sancharni</span>, the official magazine of the ICT & ECE departments at PDEU, for outstanding contributions and achievements with Team Kaizen at Shell Eco-Marathon.</div>
-      <div class="cert-footer">PDEU Sancharni Magazine · 2025</div>
+      <div class="cert-mini-card">
+        <div class="cert-mini-top" style="border-color: rgba(240,194,122,0.3);">
+          <div class="cert-mini-icon" style="background: rgba(240,194,122,0.1); color: var(--accent3);">⭐</div>
+          <div class="cert-mini-type" style="color: var(--accent3);">Recognition</div>
+        </div>
+        <div class="cert-mini-org">Indian Embassy · Qatar</div>
+        <div class="cert-mini-title">ICC Star Recognition</div>
+        <div class="cert-mini-desc">Honoured by the Indian Cultural Centre under the Indian Embassy, Qatar for representing India at Shell Eco-Marathon</div>
+        <div class="cert-mini-date">Doha, Qatar · 2025</div>
+      </div>
+
+      <div class="cert-mini-card">
+        <div class="cert-mini-top" style="border-color: rgba(57,255,120,0.3);">
+          <div class="cert-mini-icon" style="background: rgba(57,255,120,0.1); color: #39ff78;">📰</div>
+          <div class="cert-mini-type" style="color: #39ff78;">Featured</div>
+        </div>
+        <div class="cert-mini-org">PDEU · ICT & ECE Department</div>
+        <div class="cert-mini-title">Sancharni Magazine Feature</div>
+        <div class="cert-mini-desc">Recognised in the official department magazine for outstanding contributions with Team Kaizen at Shell Eco-Marathon</div>
+        <div class="cert-mini-date">PDEU Sancharni · 2025</div>
+      </div>
+
     </div>
 
   </div>
