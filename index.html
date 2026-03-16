@@ -2177,6 +2177,18 @@ section {
     0%, 100% { opacity: 0.3; transform: scaleX(0.6); }
     50% { opacity: 1; transform: scaleX(1); }
   }
+ /* CERT ICON POP UP ON HOVER */
+  .ccp-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 8px rgba(168,180,255,0.4));
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    cursor: default;
+    display: inline-block;
+  }
+  .cert-card-premium:hover .ccp-icon {
+    transform: scale(1.35) rotate(8deg) translateY(-6px) !important;
+    filter: drop-shadow(0 0 20px rgba(94,240,200,0.7)) drop-shadow(0 0 40px rgba(124,143,255,0.4)) !important;
+  }
 </style>
 </head>
 <body>
