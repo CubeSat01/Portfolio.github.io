@@ -1990,6 +1990,151 @@ section {
   @media (max-width: 700px) {
     .cert-featured-row { grid-template-columns: 1fr; }
   }
+ /* PREMIUM CERT CARDS */
+  .cert-card-premium {
+    background: linear-gradient(145deg, rgba(20,18,40,0.95), rgba(14,14,28,0.95));
+    border: 0.5px solid rgba(168,180,255,0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .cert-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168,180,255,0.4), rgba(94,240,200,0.3), transparent);
+  }
+  .cert-card-premium::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(ellipse at top right, rgba(88,60,232,0.06), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .cert-card-premium:hover {
+    border-color: rgba(94,240,200,0.35);
+    transform: translateY(-5px);
+    box-shadow:
+      0 0 25px rgba(94,240,200,0.12),
+      0 0 60px rgba(124,143,255,0.08),
+      0 20px 40px rgba(0,0,0,0.3);
+  }
+  .cert-card-premium:hover::after { opacity: 1; }
+  .ccp-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+  }
+  .ccp-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ccp-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 8px rgba(168,180,255,0.4));
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  .cert-card-premium:hover .ccp-icon {
+    filter: drop-shadow(0 0 14px rgba(94,240,200,0.6));
+    transform: scale(1.1) rotate(5deg);
+  }
+  .ccp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  .ccp-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 0.1rem;
+  }
+  .ccp-highlight {
+    font-size: 0.9rem;
+    color: #d8d8e8;
+    line-height: 1.7;
+    padding: 0.8rem 1rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(168,180,255,0.3);
+    border-radius: 0 6px 6px 0;
+    margin: 0.3rem 0;
+  }
+  .cert-card-premium:hover .ccp-highlight {
+    border-left-color: rgba(94,240,200,0.5);
+  }
+  .ccp-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+  .ccp-badge {
+    display: inline-block;
+    width: fit-content;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    border: 0.5px solid;
+    margin-top: 0.3rem;
+    transition: all 0.3s ease;
+  }
+  .ccp-badge-amber {
+    background: rgba(240,194,122,0.1);
+    color: var(--accent3);
+    border-color: rgba(240,194,122,0.35);
+  }
+  .cert-card-premium:hover .ccp-badge-amber {
+    background: rgba(240,194,122,0.18);
+    box-shadow: 0 0 14px rgba(240,194,122,0.25);
+  }
+  .ccp-badge-purple {
+    background: rgba(168,180,255,0.1);
+    color: var(--accent);
+    border-color: rgba(168,180,255,0.35);
+  }
+  .cert-card-premium:hover .ccp-badge-purple {
+    background: rgba(168,180,255,0.18);
+    box-shadow: 0 0 14px rgba(168,180,255,0.25);
+  }
+  .ccp-badge-teal {
+    background: rgba(94,240,200,0.1);
+    color: var(--accent2);
+    border-color: rgba(94,240,200,0.35);
+  }
+  .cert-card-premium:hover .ccp-badge-teal {
+    background: rgba(94,240,200,0.18);
+    box-shadow: 0 0 14px rgba(94,240,200,0.25);
+  }
+  .ccp-badge-green {
+    background: rgba(57,255,120,0.1);
+    color: #39ff78;
+    border-color: rgba(57,255,120,0.35);
+  }
+  .cert-card-premium:hover .ccp-badge-green {
+    background: rgba(57,255,120,0.18);
+    box-shadow: 0 0 14px rgba(57,255,120,0.3);
+  }
 </style>
 </head>
 <body>
@@ -2232,102 +2377,88 @@ section {
 <!-- SKILLS -->
  <!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="section-label">05 — Certifications & Recognition</div>
+  <div class="section-label">08 — Certifications & Recognition</div>
   <h2><strong>Achievements & Certifications</strong></h2>
-  <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 4rem; max-width: 600px;">
-    Every certificate a proof of commitment. Every recognition a validation of excellence.
-  </p>
+  <br/>
 
-  <div class="cert-showcase">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; max-width: 100%;">
 
-    <!-- TOP ROW — FEATURED 2 -->
-    <div class="cert-featured-row">
-
-      <div class="cert-hero-card">
-        <div class="cert-hero-bg cert-bg-orange"></div>
-        <div class="cert-hero-content">
-          <div class="cert-hero-org">Shell Eco-Marathon</div>
-          <div class="cert-hero-icon">🏆</div>
-          <div class="cert-hero-title">Certificate of Results</div>
-          <div class="cert-hero-subtitle">Asia-Pacific & Middle East 2025</div>
-          <div class="cert-hero-highlight">226.76 km/kWh · 5th Place · Prototype Battery-Electric</div>
-          <div class="cert-hero-meta">
-            <span>Mitisha Ghelani</span>
-            <span>·</span>
-            <span>Team Kaizen India · PDEU</span>
-            <span>·</span>
-            <span>Feb 12, 2025</span>
-          </div>
-          <div class="cert-hero-badge">🥇 1st in India</div>
-        </div>
+    <!-- CARD 1 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">Shell Eco-Marathon</div>
+        <div class="ccp-icon">🏆</div>
       </div>
-
-      <div class="cert-hero-card">
-        <div class="cert-hero-bg cert-bg-purple"></div>
-        <div class="cert-hero-content">
-          <div class="cert-hero-org">PDEU × Synopsys × VLSI Expert</div>
-          <div class="cert-hero-icon">🔬</div>
-          <div class="cert-hero-title">Certificate of Completion</div>
-          <div class="cert-hero-subtitle">RTL to GDSII · Synopsys EDA Tools</div>
-          <div class="cert-hero-highlight">5-Day Workshop · Full ASIC Design Flow Closure</div>
-          <div class="cert-hero-meta">
-            <span>Ghelani Mitisha</span>
-            <span>·</span>
-            <span>26–30 May 2025</span>
-          </div>
-          <div class="cert-hero-badge" style="background: rgba(168,180,255,0.15); border-color: rgba(168,180,255,0.4); color: var(--accent);">✓ Full Closure</div>
-        </div>
-      </div>
-
+      <div class="ccp-title">Certificate of Results</div>
+      <div class="ccp-subtitle">ASIA-PACIFIC & MIDDLE EAST 2025</div>
+      <div class="ccp-highlight">226.76 km/kWh · 5th Place · Prototype Battery-Electric</div>
+      <div class="ccp-meta">Mitisha Ghelani · Team Kaizen India · PDEU · Feb 12, 2025</div>
+      <div class="ccp-badge ccp-badge-amber">🥇 1ST IN INDIA</div>
     </div>
 
-    <!-- BOTTOM ROW — 4 CARDS -->
-    <div class="cert-grid-row">
-
-      <div class="cert-mini-card">
-        <div class="cert-mini-top" style="border-color: rgba(110,231,199,0.3);">
-          <div class="cert-mini-icon" style="background: rgba(110,231,199,0.1); color: var(--accent2);">📜</div>
-          <div class="cert-mini-type" style="color: var(--accent2);">Participation</div>
-        </div>
-        <div class="cert-mini-org">ChipIN · MeitY · PDEU</div>
-        <div class="cert-mini-title">Advanced Semiconductor Device Design</div>
-        <div class="cert-mini-desc">3-Day Skill Development Program on Semiconductor Design, Simulation & Circuit Implementation</div>
-        <div class="cert-mini-date">March 21–22 & 28, 2025</div>
+    <!-- CARD 2 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">PDEU × Synopsys × VLSI Expert</div>
+        <div class="ccp-icon">🔬</div>
       </div>
+      <div class="ccp-title">Certificate of Completion</div>
+      <div class="ccp-subtitle">RTL TO GDSII · SYNOPSYS EDA TOOLS</div>
+      <div class="ccp-highlight">5-Day Workshop · Full ASIC Design Flow Closure</div>
+      <div class="ccp-meta">Ghelani Mitisha · 26–30 May 2025</div>
+      <div class="ccp-badge ccp-badge-purple">✓ FULL CLOSURE</div>
+    </div>
 
-      <div class="cert-mini-card">
-        <div class="cert-mini-top" style="border-color: rgba(168,180,255,0.3);">
-          <div class="cert-mini-icon" style="background: rgba(168,180,255,0.1); color: var(--accent);">📜</div>
-          <div class="cert-mini-type" style="color: var(--accent);">Participation</div>
-        </div>
-        <div class="cert-mini-org">PDEU · SoT · ECE & ICT</div>
-        <div class="cert-mini-title">VLSI Connect · Academia & Industry</div>
-        <div class="cert-mini-desc">One-day event bridging the gap between Academia and Industry in VLSI domain</div>
-        <div class="cert-mini-date">October 11, 2024</div>
+    <!-- CARD 3 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">ChipIN · MeitY · PDEU</div>
+        <div class="ccp-icon">📜</div>
       </div>
+      <div class="ccp-title">Certificate of Participation</div>
+      <div class="ccp-subtitle">ADVANCED SEMICONDUCTOR DEVICE DESIGN</div>
+      <div class="ccp-highlight">3-Day Skill Development Program on Semiconductor Design, Simulation & Circuit Implementation</div>
+      <div class="ccp-meta">Mitisha Ghelani · March 21–22 & 28, 2025</div>
+      <div class="ccp-badge ccp-badge-teal">✓ PARTICIPATED</div>
+    </div>
 
-      <div class="cert-mini-card">
-        <div class="cert-mini-top" style="border-color: rgba(240,194,122,0.3);">
-          <div class="cert-mini-icon" style="background: rgba(240,194,122,0.1); color: var(--accent3);">⭐</div>
-          <div class="cert-mini-type" style="color: var(--accent3);">Recognition</div>
-        </div>
-        <div class="cert-mini-org">Indian Embassy · Qatar</div>
-        <div class="cert-mini-title">ICC Star Recognition</div>
-        <div class="cert-mini-desc">Honoured by the Indian Cultural Centre under the Indian Embassy, Qatar for representing India at Shell Eco-Marathon</div>
-        <div class="cert-mini-date">Doha, Qatar · 2025</div>
+    <!-- CARD 4 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">PDEU · SoT · ECE & ICT</div>
+        <div class="ccp-icon">📡</div>
       </div>
+      <div class="ccp-title">Certificate of Participation</div>
+      <div class="ccp-subtitle">VLSI CONNECT · ACADEMIA & INDUSTRY</div>
+      <div class="ccp-highlight">One-day event bridging the gap between Academia and Industry in the VLSI domain</div>
+      <div class="ccp-meta">Ghelani Mitisha · October 11, 2024</div>
+      <div class="ccp-badge ccp-badge-purple">✓ PARTICIPATED</div>
+    </div>
 
-      <div class="cert-mini-card">
-        <div class="cert-mini-top" style="border-color: rgba(57,255,120,0.3);">
-          <div class="cert-mini-icon" style="background: rgba(57,255,120,0.1); color: #39ff78;">📰</div>
-          <div class="cert-mini-type" style="color: #39ff78;">Featured</div>
-        </div>
-        <div class="cert-mini-org">PDEU · ICT & ECE Department</div>
-        <div class="cert-mini-title">Sancharni Magazine Feature</div>
-        <div class="cert-mini-desc">Recognised in the official department magazine for outstanding contributions with Team Kaizen at Shell Eco-Marathon</div>
-        <div class="cert-mini-date">PDEU Sancharni · 2025</div>
+    <!-- CARD 5 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">Indian Embassy · Qatar</div>
+        <div class="ccp-icon">⭐</div>
       </div>
+      <div class="ccp-title">ICC Star Recognition</div>
+      <div class="ccp-subtitle">INDIAN CULTURAL CENTRE · QATAR</div>
+      <div class="ccp-highlight">Honoured by the Indian Cultural Centre under the Indian Embassy, Qatar for representing India at Shell Eco-Marathon with distinction</div>
+      <div class="ccp-meta">Doha, Qatar · 2025</div>
+      <div class="ccp-badge ccp-badge-green">⭐ RECOGNISED</div>
+    </div>
 
+    <!-- CARD 6 -->
+    <div class="cert-card-premium">
+      <div class="ccp-top">
+        <div class="ccp-org">PDEU · ICT & ECE Department</div>
+        <div class="ccp-icon">📰</div>
+      </div>
+      <div class="ccp-title">Sancharni Magazine Feature</div>
+      <div class="ccp-subtitle">PDEU OFFICIAL DEPARTMENT MAGAZINE</div>
+      <div class="ccp-highlight">Recognised in the official department magazine for outstanding contributions and achievements with Team Kaizen at Shell Eco-Marathon</div>
+      <div class="ccp-meta">PDEU Sancharni · 2025</div>
+      <div class="ccp-badge ccp-badge-teal">📰 FEATURED</div>
     </div>
 
   </div>
