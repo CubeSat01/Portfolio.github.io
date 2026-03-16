@@ -2135,6 +2135,48 @@ section {
     background: rgba(57,255,120,0.18);
     box-shadow: 0 0 14px rgba(57,255,120,0.3);
   }
+ /* HIGHLIGHTED STAT NUMBERS */
+  .stat-number {
+    background: linear-gradient(135deg, #ffffff 0%, #b4bfff 30%, #5ef0c8 60%, #ffd080 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-size: 2.8rem !important;
+    font-weight: 600 !important;
+    position: relative;
+    display: inline-block;
+    filter: drop-shadow(0 0 12px rgba(94,240,200,0.3));
+    animation: statGlow 3s ease-in-out infinite alternate;
+  }
+  @keyframes statGlow {
+    0% { filter: drop-shadow(0 0 8px rgba(168,180,255,0.4)); }
+    50% { filter: drop-shadow(0 0 18px rgba(94,240,200,0.5)); }
+    100% { filter: drop-shadow(0 0 12px rgba(255,208,128,0.4)); }
+  }
+  .stat-card:hover .stat-number {
+    filter: drop-shadow(0 0 25px rgba(57,255,120,0.7)) !important;
+    animation: none !important;
+  }
+
+  /* ACADEMIC CREDENTIAL NUMBERS */
+  .stat-card .stat-number {
+    letter-spacing: -0.02em;
+  }
+
+  /* PULSING UNDERLINE UNDER NUMBERS */
+  .stat-number::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(94,240,200,0.6), transparent);
+    animation: underlinePulse 2s ease-in-out infinite;
+  }
+  @keyframes underlinePulse {
+    0%, 100% { opacity: 0.3; transform: scaleX(0.6); }
+    50% { opacity: 1; transform: scaleX(1); }
+  }
 </style>
 </head>
 <body>
